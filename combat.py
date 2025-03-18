@@ -1,57 +1,61 @@
 # combat.py
 import random
 import time
+from colorama import Fore, Style, init
+
+# Initialisation de colorama pour Windows
+init(autoreset=True)
 
 def combat_start(team1, team2):
-    print("\n--- Début du combat ---\n")
+    print(Fore.YELLOW + "\n🏰 --- DÉBUT DU COMBAT --- 🏰\n")
 
     all_characters = team1 + team2
     all_characters.sort(key=lambda c: c.speed, reverse=True)
 
     round_count = 1
     while any(c.is_alive() for c in team1) and any(c.is_alive() for c in team2):
-        print(f"\n--- Round {round_count} ---")
+        print(Fore.CYAN + f"\n⚔️ --- ROUND {round_count} --- ⚔️")
+        time.sleep(1)
         for attacker in all_characters:
             if not attacker.is_alive():
-                continue  # Sauter si personnage KO
+                continue
 
-            # Déterminer l’équipe adverse
             target_team = team2 if attacker in team1 else team1
             alive_targets = [c for c in target_team if c.is_alive()]
 
             if not alive_targets:
-                break  # L'équipe adverse est vaincue
+                break
 
             target = random.choice(alive_targets)
-
-            # Calcul des dégâts
             roll = random.randint(1, 100)
+
             if roll <= 5:
                 # Coup critique
                 damage = 20
                 target.hp -= damage
-                print(f"💥 {attacker.name} fait un CRITIQUE sur {target.name} ! -{damage} HP")
+                print(Fore.RED + f"💥 {attacker.name.upper()} réalise un COUP CRITIQUE sur {target.name} ! (-{damage} HP)")
             elif roll >= 96:
-                # Fumble critique
+                # Fumble
                 attacker.hp -= 10
-                print(f"🤦 {attacker.name} rate son attaque et s'auto-inflige 10 HP !")
+                print(Fore.MAGENTA + f"🤦 {attacker.name} trébuche et s'auto-inflige 10 HP !")
             else:
                 damage = random.randint(0, 10)
+                color = Fore.GREEN if damage <= 5 else Fore.LIGHTRED_EX
+                print(color + f"{attacker.name} attaque {target.name} et inflige {damage} HP.")
                 target.hp -= damage
-                print(f"{attacker.name} attaque {target.name} pour {damage} HP.")
 
-            # Pause courte pour lisibilité
-            time.sleep(0.5)
+            time.sleep(0.7)
 
         round_count += 1
+        time.sleep(1)
 
-    # Résultat final
-    print("\n--- Fin du combat ---")
+    # Fin du combat
+    print(Fore.YELLOW + "\n🏆 --- FIN DU COMBAT --- 🏆")
     winner = "Équipe 1" if any(c.is_alive() for c in team1) else "Équipe 2"
-    print(f"🏆 Victoire de {winner} !\n")
+    print(Fore.LIGHTGREEN_EX + f"\n🎉 VICTOIRE DE {winner} ! 🎉\n")
 
-    print("État final des personnages :")
+    print(Fore.CYAN + "État final des personnages :")
     for c in all_characters:
-        status = "Vivant" if c.is_alive() else "Mort"
+        status = Fore.LIGHTGREEN_EX + "Vivant" if c.is_alive() else Fore.LIGHTBLACK_EX + "Mort"
         print(f"{c.name} - {status} ({c.hp} HP)")
 
