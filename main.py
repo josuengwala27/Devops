@@ -1,6 +1,7 @@
 # main.py
 
 from characters import Character
+from combat import combat_start
 
 # Configuration manuelle des équipes
 team1 = [
@@ -23,3 +24,5 @@ for c in team1:
 print("\nÉquipe 2 :")
 for c in team2:
     print(c)
+
+combat_start(team1, team2)
