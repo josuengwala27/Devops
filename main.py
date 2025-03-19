@@ -25,4 +25,5 @@ print("\nÉquipe 2 :")
 for c in team2:
     print(c)
 
+input("\nAppuyez sur Entrée pour commencer le combat...")
 combat_start(team1, team2)
