@@ -5,15 +5,15 @@ from combat import combat_start
 
 # Configuration manuelle des équipes
 team1 = [
-    Character("Guerrier1", speed=5),
-    Character("Archer1", speed=7),
-    Character("Mage1", speed=4)
+    Character("Aragorn", speed=5),    # Guerrier légendaire
+    Character("Legolas", speed=7),    # Archer elfique
+    Character("Gandalf", speed=4)     # Mage puissant
 ]
 
 team2 = [
-    Character("Guerrier2", speed=6),
-    Character("Archer2", speed=8),
-    Character("Mage2", speed=3)
+    Character("Geralt", speed=6),     # Le sorceleur
+    Character("Hawkeye", speed=8),    # Archer expert
+    Character("Merlin", speed=3)      # Mage mythique
 ]
 
 # Affichage pour vérification
