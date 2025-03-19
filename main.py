@@ -16,6 +16,7 @@ team2 = [
     Character("Merlin", speed=3)      # Mage mythique
 ]
 
+
 # Affichage pour vérification
 print("Équipe 1 :")
 for c in team1:
