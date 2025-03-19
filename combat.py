@@ -6,6 +6,12 @@ from colorama import Fore, Style, init
 # Initialisation de colorama pour Windows
 init(autoreset=True)
 
+def create_health_bar(current_hp, max_hp=100, bar_length=20):
+    filled_length = int(bar_length * current_hp / max_hp)
+    bar = '█' * filled_length + '░' * (bar_length - filled_length)
+    percentage = current_hp / max_hp * 100
+    return f"[{bar}] {int(percentage)}%"
+
 def combat_start(team1, team2):
     print(Fore.YELLOW + "\n🏰 --- DÉBUT DU COMBAT --- 🏰\n")
 
@@ -28,6 +34,7 @@ def combat_start(team1, team2):
 
             target = random.choice(alive_targets)
             roll = random.randint(1, 100)
+            old_hp = target.hp
 
             if roll <= 5:
                 # Coup critique
@@ -38,11 +45,15 @@ def combat_start(team1, team2):
                 # Fumble
                 attacker.hp -= 10
                 print(Fore.MAGENTA + f"🤦 {attacker.name} trébuche et s'auto-inflige 10 HP !")
+                print(f"Vie de {attacker.name}: {create_health_bar(attacker.hp)}")
             else:
                 damage = random.randint(0, 10)
                 color = Fore.GREEN if damage <= 5 else Fore.LIGHTRED_EX
                 print(color + f"{attacker.name} attaque {target.name} et inflige {damage} HP.")
                 target.hp -= damage
+
+            if target.hp != old_hp:
+                print(f"Vie de {target.name}: {create_health_bar(target.hp)}")
 
             time.sleep(0.7)
 
@@ -57,5 +68,6 @@ def combat_start(team1, team2):
     print(Fore.CYAN + "État final des personnages :")
     for c in all_characters:
         status = Fore.LIGHTGREEN_EX + "Vivant" if c.is_alive() else Fore.LIGHTBLACK_EX + "Mort"
-        print(f"{c.name} - {status} ({c.hp} HP)")
+        health_bar = create_health_bar(c.hp) if c.is_alive() else "[░░░░░░░░░░░░░░░░░░░░] 0%"
+        print(f"{c.name} - {status} | {health_bar}")
 
