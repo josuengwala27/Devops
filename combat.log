@@ -777,3 +777,38 @@
 2025-03-20 16:00:08,373 - INFO - Aragorn attaque Geralt
 2025-03-20 16:00:09,378 - INFO - Gandalf attaque Hawkeye
 2025-03-20 16:00:10,386 - INFO - Merlin attaque Aragorn
+2025-03-20 16:09:19,979 - INFO - Début du round 1
+2025-03-20 16:09:19,982 - INFO - Hawkeye attaque Gandalf
+2025-03-20 16:09:20,992 - INFO - Legolas attaque Geralt
+2025-03-20 16:09:21,998 - INFO - Geralt attaque Legolas
+2025-03-20 16:09:23,003 - INFO - Aragorn attaque Merlin
+2025-03-20 16:09:24,015 - INFO - Gandalf attaque Hawkeye
+2025-03-20 16:09:25,021 - INFO - Merlin attaque Legolas
+2025-03-20 16:09:26,030 - INFO - Début du round 2
+2025-03-20 16:09:26,031 - INFO - Hawkeye attaque Legolas
+2025-03-20 16:09:27,038 - INFO - Legolas attaque Hawkeye
+2025-03-20 16:09:28,041 - INFO - Geralt attaque Aragorn
+2025-03-20 16:09:29,046 - INFO - Aragorn attaque Hawkeye
+2025-03-20 16:09:30,055 - INFO - Gandalf attaque Hawkeye
+2025-03-20 16:09:31,061 - INFO - Merlin attaque Aragorn
+2025-04-30 09:11:25,649 - INFO - Début du round 1
+2025-04-30 09:11:25,649 - INFO - Hawkeye attaque Aragorn
+2025-04-30 09:11:26,654 - INFO - Legolas attaque Geralt
+2025-04-30 09:11:27,658 - INFO - Geralt attaque Aragorn
+2025-04-30 09:11:28,664 - INFO - Aragorn attaque Merlin
+2025-04-30 09:11:29,668 - INFO - Gandalf attaque Hawkeye
+2025-04-30 09:11:30,674 - INFO - Merlin attaque Aragorn
+2025-04-30 09:11:31,681 - INFO - Début du round 2
+2025-04-30 09:11:31,681 - INFO - Hawkeye attaque Aragorn
+2025-04-30 09:11:32,688 - INFO - Legolas attaque Geralt
+2025-04-30 09:11:33,693 - INFO - Geralt attaque Aragorn
+2025-04-30 09:11:34,698 - INFO - Aragorn attaque Hawkeye
+2025-04-30 09:11:35,705 - INFO - Gandalf attaque Merlin
+2025-04-30 09:11:36,711 - INFO - Merlin attaque Gandalf
+2025-04-30 09:11:37,716 - INFO - Début du round 3
+2025-04-30 09:11:37,717 - INFO - Hawkeye attaque Legolas
+2025-04-30 09:11:38,722 - INFO - Legolas attaque Geralt
+2025-04-30 09:11:39,726 - INFO - Geralt attaque Legolas
+2025-04-30 09:11:40,732 - INFO - Aragorn attaque Geralt
+2025-04-30 09:11:41,737 - INFO - Gandalf attaque Hawkeye
+2025-04-30 09:11:42,743 - INFO - Merlin attaque Gandalf
